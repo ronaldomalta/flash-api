@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: api-config
+  namespace: devops-atividade
+data:
+  PORT: "3000"
+  DB_HOST: postgres
+  DB_PORT: "5432"
+  DB_NAME: flash_sales
+  REDIS_HOST: redis
+  REDIS_PORT: "6379"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: api-secret
+  namespace: devops-atividade
+type: Opaque
+stringData:
+  DB_USER: postgres
+  DB_PASSWORD: postgres
